@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">lab2SQL</string>
+    <string name="button_add">Dodaj</string>
+    <string name="value">Wartość</string>
 </resources>
