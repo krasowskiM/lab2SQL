@@ -6,15 +6,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class DbHelper extends SQLiteOpenHelper {
-    public static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 1;
+    private static final String DB_NAME = "phones";
     public static final String ID = "_id";
-    public static final String DB_NAME = "nazwa_bazy";
-    public static final String TABLE_NAME = "nazwa_tabeli";
-    public static final String COLUMN_1 = "nazwa_kolumny_1";
-    public static final String COLUMN_2 = "nazwa_kolumny_2";
-    public static final String TB_CREATE = "CREATE TABLE " + TABLE_NAME
-            + "(" + ID + " integer primary key autoincrement, " + COLUMN_1 + " text not null"
-            + COLUMN_2 + " text);";
+    public static final String TABLE_NAME = "phones_table";
+    public static final String COLUMN_1 = "brand";
+    private static final String COLUMN_2 = "model";
+    private static final String COLUMN_3 = "version";
+    private static final String COLUMN_4 = "www";
+    private static final String TB_CREATE = "CREATE TABLE " + TABLE_NAME
+            + "(" + ID + " integer primary key autoincrement, " + COLUMN_1 + " text not NULL, "
+            + COLUMN_2 + " text," + COLUMN_3 + " text," + COLUMN_4 + " text);";
     private static final String TB_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     public DbHelper(Context context) {

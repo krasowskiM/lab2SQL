@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.example.student.lab2sql.activity.ActivitySql;
 import com.example.student.lab2sql.persistence.DbHelper;
 
 public class ValueProvider extends ContentProvider {
@@ -18,7 +19,7 @@ public class ValueProvider extends ContentProvider {
     private static final UriMatcher URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
     private DbHelper dbHelper;
 
-    public static final Uri CONTENT_URI = Uri.parse("content://" + ID + "/" + DbHelper.DB_NAME);
+    public static final Uri CONTENT_URI = Uri.parse("content://" + ID + "/" + DbHelper.TABLE_NAME);
 
     static {
         URI_MATCHER.addURI(ID, DbHelper.TABLE_NAME, WHOLE_TABLE);
@@ -135,6 +136,7 @@ public class ValueProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
+        dbHelper = new DbHelper(getContext());
         return false;
     }
 

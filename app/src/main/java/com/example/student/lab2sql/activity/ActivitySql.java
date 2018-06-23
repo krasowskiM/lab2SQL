@@ -1,14 +1,13 @@
 package com.example.student.lab2sql.activity;
 
-import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +17,6 @@ import android.widget.SimpleCursorAdapter;
 import com.example.student.lab2sql.R;
 import com.example.student.lab2sql.persistence.DbHelper;
 import com.example.student.lab2sql.persistence.provider.ValueProvider;
-
-import java.util.SimpleTimeZone;
 
 public class ActivitySql extends AppCompatActivity implements LoaderCallbacks<Cursor> {
     private SimpleCursorAdapter cursorAdapter;
